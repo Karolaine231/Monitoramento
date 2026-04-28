@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pymysql
+celery[redis]
+redis
+playwright
+beautifulsoup4
+lxml
+python-dotenv
+pydantic[email]
+openpyxl
