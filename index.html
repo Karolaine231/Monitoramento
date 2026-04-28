@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasbro Price Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <!-- Hasbro logo SVG simplified -->
+          <svg viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="90">
+            <text x="0" y="28" font-family="Inter" font-weight="700" font-size="23" fill="white">Hasbro</text>
+          </svg>
+        </div>
+        <div class="brand-sub">PRICE MONITOR</div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-section="dashboard">
+          <span class="icon">
+            <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          </span>
+          Dashboard
+        </button>
+
+        <button class="nav-item" data-section="cadastro">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/>
+            </svg>
+          </span>
+          Cadastro de Itens
+        </button>
+
+        <button class="nav-item" data-section="monitoramento">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </span>
+          Monitoramento
+        </button>
+
+        <button class="nav-item" data-section="historico">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </span>
+          Histórico de Preços
+        </button>
+
+        <button class="nav-item" data-section="relatorios">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </span>
+          Relatórios
+        </button>
+
+        <button class="nav-item" data-section="configuracoes">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </span>
+          Configurações
+        </button>
+      </nav>
+
+      <div class="sidebar-logout">
+        <button class="logout-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="18" height="18">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          Sair
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-right">
+          <button class="notif-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notif-badge">3</span>
+          </button>
+          <div class="user-chip">
+            <div class="user-avatar">A</div>
+            <div class="user-info">
+              <span class="user-name">Administrador</span>
+              <span class="user-email">admin@hasbro.com</span>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD SECTION -->
+      <section id="dashboard" class="content-section active">
+        <div class="page-header">
+          <h2>Olá, Administrador! 👋</h2>
+          <p>Aqui está o resumo do monitoramento de preços desta semana.</p>
+        </div>
+
+        <!-- METRIC CARDS -->
+        <div class="cards-grid">
+          <article class="metric-card">
+            <div class="metric-icon blue">
+              <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/></svg>
+            </div>
+            <div class="metric-body">
+              <div class="metric-value" id="metricProducts">2</div>
+              <div class="metric-label">Itens cadastrados</div>
+              <div class="metric-sub">Total de produtos no sistema</div>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="26" height="26">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="metric-body">
+              <div class="metric-value" id="metricMonitoring">18</div>
+              <div class="metric-label">Monitorados na semana</div>
+              <div class="metric-sub">Coletas realizadas</div>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-icon red">
+              <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M12 2L1 21h22L12 2zm1 14h-2v-2h2v2zm0-4h-2V8h2v4z"/></svg>
+            </div>
+            <div class="metric-body">
+              <div class="metric-value" id="metricAlerts">4</div>
+              <div class="metric-label">Alertas abaixo do MAP</div>
+              <div class="metric-sub">Preços abaixo do recomendado</div>
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="26" height="26">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              </svg>
+            </div>
+            <div class="metric-body">
+              <div class="metric-value" id="metricReports">2</div>
+              <div class="metric-label">Relatórios enviados</div>
+              <div class="metric-sub">Último: hoje, 08:30</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- CHART + ALERTS -->
+        <div class="panel-row">
+          <section class="panel chart-panel">
+            <div class="panel-header">
+              <h3>Evolução de Preços <span class="period-label">(últimos 7 dias)</span></h3>
+              <div class="period-select">
+                7 dias <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item solid">Menor preço encontrado</span>
+              <span class="legend-item dashed">Preço MAP médio</span>
+            </div>
+            <div class="chart-area">
+              <canvas id="priceChart" width="560" height="200"></canvas>
+            </div>
+          </section>
+
+          <section class="panel alerts-panel">
+            <div class="panel-header">
+              <h3>Alertas Recentes</h3>
+              <a href="#" class="see-all">Ver todos</a>
+            </div>
+            <ul class="alert-list" id="alertList">
+              <li class="alert-item">
+                <div class="alert-img">
+                  <div class="img-placeholder nerf"></div>
+                </div>
+                <div class="alert-info">
+                  <div class="alert-name">Nerf Elite 2.0 Commander RD-6</div>
+                  <div class="alert-price">Preço encontrado: <span class="price-red">R$ 139,90</span></div>
+                </div>
+                <div class="alert-pct red">-12%<br><small>abaixo do MAP</small></div>
+              </li>
+              <li class="alert-item">
+                <div class="alert-img">
+                  <div class="img-placeholder mono"></div>
+                </div>
+                <div class="alert-info">
+                  <div class="alert-name">Monopoly Edição Clássica</div>
+                  <div class="alert-price">Preço encontrado: <span class="price-red">R$ 89,90</span></div>
+                </div>
+                <div class="alert-pct red">-10%<br><small>abaixo do MAP</small></div>
+              </li>
+              <li class="alert-item">
+                <div class="alert-img">
+                  <div class="img-placeholder play"></div>
+                </div>
+                <div class="alert-info">
+                  <div class="alert-name">Play-Doh Kit Criativo</div>
+                  <div class="alert-price">Preço encontrado: <span class="price-red">R$ 49,90</span></div>
+                </div>
+                <div class="alert-pct red">-8%<br><small>abaixo do MAP</small></div>
+              </li>
+              <li class="alert-item">
+                <div class="alert-img">
+                  <div class="img-placeholder clue"></div>
+                </div>
+                <div class="alert-info">
+                  <div class="alert-name">Jogo de Tabuleiro Clue</div>
+                  <div class="alert-price">Preço encontrado: <span class="price-red">R$ 99,90</span></div>
+                </div>
+                <div class="alert-pct red">-6%<br><small>abaixo do MAP</small></div>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- RECENT PRODUCTS TABLE -->
+        <section class="panel">
+          <div class="panel-header">
+            <h3>Últimos Itens Cadastrados</h3>
+            <button class="primary-btn" onclick="switchSection('cadastro')">+ Novo Item</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>EAN</th>
+                  <th>SKU</th>
+                  <th>MAP (R$)</th>
+                  <th>Data de Cadastro</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="recentProductsTable"></tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            © 2025 Hasbro Price Monitor. Todos os direitos reservados.
+          </div>
+        </section>
+      </section>
+
+      <!-- CADASTRO SECTION -->
+      <section id="cadastro" class="content-section">
+        <div class="page-header">
+          <h2>Cadastro de Itens</h2>
+          <p>Adicione novos produtos para monitoramento de preços.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Cadastrar produto</h3>
+          </div>
+          <form id="productForm" class="product-form">
+            <div class="form-grid">
+              <div class="field">
+                <label>Nome do produto</label>
+                <input type="text" id="name" placeholder="Ex: Monopoly Expansão Buy Even" required />
+              </div>
+              <div class="field">
+                <label>EAN</label>
+                <input type="text" id="ean" placeholder="Ex: 5010996306401" />
+              </div>
+              <div class="field">
+                <label>SKU</label>
+                <input type="text" id="sku" placeholder="Ex: G0720" />
+              </div>
+              <div class="field">
+                <label>Código</label>
+                <input type="text" id="code" placeholder="Ex: G0720B071" />
+              </div>
+              <div class="field">
+                <label>Preço MAP (R$)</label>
+                <input type="number" id="map_price" step="0.01" placeholder="Ex: 79.90" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">Salvar produto</button>
+              <button type="button" class="secondary-btn" id="clearFormBtn">Limpar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- MONITORAMENTO SECTION -->
+      <section id="monitoramento" class="content-section">
+        <div class="page-header">
+            <h2>Monitoramento</h2>
+            <p>Acompanhe os produtos cadastrados e visualize os resultados encontrados por varejista.</p>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+            <h3>Itens monitorados</h3>
+            </div>
+
+            <div class="toolbar">
+            <input type="text" id="searchInput" placeholder="Buscar por nome, EAN, SKU..." />
+            </div>
+
+            <div id="monitoringList" class="monitoring-list"></div>
+        </div>
+        </section>
+      <!-- HISTORICO SECTION -->
+      <section id="historico" class="content-section">
+        <div class="page-header">
+            <h2>Histórico de Preços</h2>
+            <p>Visualize o histórico de um item específico por varejista.</p>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+            <h3>Análise por item</h3>
+            </div>
+
+            <div class="history-filters">
+            <div class="field">
+                <label>Produto</label>
+                <select id="historyProductSelect"></select>
+            </div>
+
+            <div class="field">
+                <label>Período</label>
+                <select id="historyPeriodSelect">
+                <option value="7">Últimos 7 dias</option>
+                <option value="15">Últimos 15 dias</option>
+                <option value="30">Últimos 30 dias</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="history-retailer-filters">
+            <label class="retailer-check">
+                <input type="checkbox" class="historyRetailer" value="Mercado Livre" checked />
+                <span>Mercado Livre</span>
+            </label>
+
+            <label class="retailer-check">
+                <input type="checkbox" class="historyRetailer" value="Amazon BR" checked />
+                <span>Amazon BR</span>
+            </label>
+
+            <label class="retailer-check">
+                <input type="checkbox" class="historyRetailer" value="Ri Happy" checked />
+                <span>Ri Happy</span>
+            </label>
+
+            <label class="retailer-check map-check">
+                <input type="checkbox" id="toggleMapLine" checked />
+                <span>Mostrar linha MAP</span>
+            </label>
+            </div>
+        </div>
+
+        <div class="history-summary-grid" id="historySummaryGrid">
+            <div class="summary-card">
+            <span>Menor preço</span>
+            <strong id="historyLowestPrice">R$ 0,00</strong>
+            </div>
+            <div class="summary-card">
+            <span>Maior preço</span>
+            <strong id="historyHighestPrice">R$ 0,00</strong>
+            </div>
+            <div class="summary-card">
+            <span>MAP</span>
+            <strong id="historyMapPrice">R$ 0,00</strong>
+            </div>
+            <div class="summary-card">
+            <span>Varejista mais barato</span>
+            <strong id="historyBestRetailer">-</strong>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+            <h3>Evolução por varejista</h3>
+            </div>
+            <div class="chart-area">
+            <canvas id="historyChart" width="900" height="280"></canvas>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+            <h3>Resumo por varejista</h3>
+            </div>
+
+            <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Varejista</th>
+                    <th>Menor preço</th>
+                    <th>Maior preço</th>
+                    <th>Preço atual</th>
+                    <th>Variantes</th>
+                    <th>Status MAP</th>
+                </tr>
+                </thead>
+                <tbody id="historyRetailerTable"></tbody>
+            </table>
+            </div>
+        </div>
+        </section>
+
+      <!-- RELATORIOS SECTION -->
+      <section id="relatorios" class="content-section">
+        <div class="page-header">
+          <h2>Relatórios</h2>
+          <p>Configure e visualize relatórios de monitoramento.</p>
+        </div>
+        <div class="panel-row">
+          <section class="panel">
+            <div class="panel-header"><h3>Configuração de relatório</h3></div>
+            <form id="reportForm" class="product-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label>E-mail destinatário</label>
+                  <input type="email" id="reportEmail" placeholder="seuemail@empresa.com" />
+                </div>
+                <div class="field">
+                  <label>Dia da semana</label>
+                  <select id="reportDay">
+                    <option>Segunda-feira</option>
+                    <option>Terça-feira</option>
+                    <option>Quarta-feira</option>
+                    <option>Quinta-feira</option>
+                    <option>Sexta-feira</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="primary-btn">Salvar configuração</button>
+              </div>
+            </form>
+          </section>
+          <section class="panel">
+            <div class="panel-header"><h3>Histórico de relatórios</h3></div>
+            <ul class="report-log" id="reportLog"></ul>
+          </section>
+        </div>
+      </section>
+
+      <!-- CONFIGURACOES SECTION -->
+      <section id="configuracoes" class="content-section">
+        <div class="page-header">
+          <h2>Configurações</h2>
+          <p>Gerencie as configurações do sistema.</p>
+        </div>
+        <div class="panel">
+          <p style="color:#888;padding:20px 0;">Configurações gerais do sistema em breve.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
