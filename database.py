@@ -5,7 +5,7 @@ import os
 
 load_dotenv()
 
-engine = create_engine(os.getenv("DB_URL"), pool_pre_ping=True)
+engine = create_engine(os.getenv("render psql dpg-d7f4mmhj2pic73938udg-a"), pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine)
 
 class Base(DeclarativeBase):
