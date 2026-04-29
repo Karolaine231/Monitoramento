@@ -5,7 +5,7 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: postgresql://monitoramento_dumw_user:NMIIDAwbUTDSP9Z4HEcC1qUhdKpPQgfG@dpg-d7f4mmhj2pic73938udg-a.oregon-postgres.render.com/monitoramento_dumw
+      - key: DB_URL
         sync: false        # você preenche no painel do Render
       - key: REDIS_URL
         sync: false
